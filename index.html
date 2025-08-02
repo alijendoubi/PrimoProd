@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primo Prod - Professional Video Production in Messina</title>
+    <meta name="description" content="Primo Prod offers premium video production services in Messina, Sicily. Specializing in commercial videos, event coverage, and social media content.">
+    <meta name="keywords" content="video production, Messina, Sicily, commercial videos, event coverage, social media content">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://primoprod.com/">
+    <meta property="og:title" content="Primo Prod - Professional Video Production in Messina">
+    <meta property="og:description" content="Premium video production services in Messina, Sicily. Specializing in commercial videos, event coverage, and social media content.">
+    <meta property="og:image" content="assets/primo-prod-logo.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://primoprod.com/">
+    <meta property="twitter:title" content="Primo Prod - Professional Video Production in Messina">
+    <meta property="twitter:description" content="Premium video production services in Messina, Sicily. Specializing in commercial videos, event coverage, and social media content.">
+    <meta property="twitter:image" content="assets/primo-prod-logo.jpg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loader">
+            <div class="camera-icon">
+                <i class="fas fa-video"></i>
+            </div>
+            <div class="loading-text">PRIMO PROD</div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="assets/primo-prod-logo.png" alt="Primo Prod Logo">
+                </div>
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li><a href="#home" class="nav-link">Home</a></li>
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                        <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <video class="hero-video" autoplay muted loop>
+            <source src="assets/hero-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content animate__animated animate__fadeInUp">
+            <h1 class="hero-title">Bringing Stories to Life</h1>
+            <p class="hero-subtitle">Professional Video Production in the Heart of Sicily</p>
+            <div class="hero-buttons">
+                <a href="#portfolio" class="btn btn-primary">View Our Work</a>
+                <a href="#contact" class="btn btn-secondary">Get Quote</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title animate__animated animate__fadeInUp">About Primo Prod</h2>
+                <p class="section-subtitle animate__animated animate__fadeInUp animate__delay-1s">
+                    Crafting Visual Excellence in Messina, Sicily
+                </p>
+            </div>
+            <div class="about-content">
+                <div class="about-text animate__animated animate__fadeInLeft">
+                    <p>
+                        Founded in the beautiful city of Messina, Primo Prod is a premier video production company 
+                        dedicated to telling compelling stories through the art of cinematography. With years of 
+                        experience in the industry, we specialize in creating high-quality visual content that 
+                        captures the essence of your brand, event, or message.
+                    </p>
+                    <p>
+                        Our team of creative professionals combines technical expertise with artistic vision to 
+                        deliver exceptional results. From commercial advertisements to wedding videos, corporate 
+                        content to social media campaigns, we bring passion and precision to every project.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <div class="stat-number">150+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">5+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Client Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image animate__animated animate__fadeInRight">
+                    <img src="assets/about-team.jpg" alt="Primo Prod Team">
+                    <div class="image-overlay">
+                        <div class="play-button" data-video="assets/about-video.mp4">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title animate__animated animate__fadeInUp">Our Portfolio</h2>
+                <p class="section-subtitle animate__animated animate__fadeInUp animate__delay-1s">
+                    Showcasing Our Creative Excellence
+                </p>
+            </div>
+            
+            <!-- Filter Buttons -->
+            <div class="portfolio-filters animate__animated animate__fadeInUp animate__delay-2s">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="commercial">Commercial</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+                <button class="filter-btn" data-filter="social">Social Media</button>
+            </div>
+            
+            <!-- Portfolio Grid -->
+            <div class="portfolio-grid">
+                <!-- Commercial Projects -->
+                <div class="portfolio-item commercial animate__animated animate__fadeInUp">
+                    <div class="portfolio-image">
+                        <img src="assets/portfolio-1.jpg" alt="Commercial Project 1">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <h3>Brand Campaign</h3>
+                                <p>Commercial Video</p>
+                                <div class="portfolio-actions">
+                                    <button class="portfolio-btn" data-type="video" data-src="assets/commercial-1.mp4">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item commercial animate__animated animate__fadeInUp animate__delay-1s">
+                    <div class="portfolio-image">
+                        <img src="assets/portfolio-2.jpg" alt="Commercial Project 2">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <h3>Product Launch</h3>
+                                <p>Commercial Video</p>
+                                <div class="portfolio-actions">
+                                    <button class="portfolio-btn" data-type="video" data-src="assets/commercial-2.mp4">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Projects -->
+                <div class="portfolio-item events animate__animated animate__fadeInUp animate__delay-2s">
+                    <div class="portfolio-image">
+                        <img src="assets/portfolio-3.jpg" alt="Event Project 1">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <h3>Wedding Ceremony</h3>
+                                <p>Event Coverage</p>
+                                <div class="portfolio-actions">
+                                    <button class="portfolio-btn" data-type="video" data-src="assets/wedding-1.mp4">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item events animate__animated animate__fadeInUp animate__delay-3s">
+                    <div class="portfolio-image">
+                        <img src="assets/portfolio-4.jpg" alt="Event Project 2">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <h3>Corporate Event</h3>
+                                <p>Event Coverage</p>
+                                <div class="portfolio-actions">
+                                    <button class="portfolio-btn" data-type="video" data-src="assets/corporate-event.mp4">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media Projects -->
+                <div class="portfolio-item social animate__animated animate__fadeInUp animate__delay-4s">
+                    <div class="portfolio-image">
+                        <img src="assets/portfolio-5.jpg" alt="Social Media Project 1">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <h3>Instagram Campaign</h3>
+                                <p>Social Media Content</p>
+                                <div class="portfolio-actions">
+                                    <button class="portfolio-btn" data-type="video" data-src="assets/social-1.mp4">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item social animate__animated animate__fadeInUp animate__delay-5s">
+                    <div class="portfolio-image">
+                        <img src="assets/portfolio-6.jpg" alt="Social Media Project 2">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <h3>TikTok Series</h3>
+                                <p>Social Media Content</p>
+                                <div class="portfolio-actions">
+                                    <button class="portfolio-btn" data-type="video" data-src="assets/social-2.mp4">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title animate__animated animate__fadeInUp">What Our Clients Say</h2>
+                <p class="section-subtitle animate__animated animate__fadeInUp animate__delay-1s">
+                    Trusted by Businesses Across Sicily
+                </p>
+            </div>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-item active">
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            "Primo Prod exceeded our expectations with their wedding video. They captured every 
+                            precious moment beautifully and delivered a masterpiece that we'll treasure forever. 
+                            Their professionalism and creativity are unmatched."
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="assets/client-1.jpg" alt="Maria Rossi">
+                            <div class="author-info">
+                                <h4>Maria & Giuseppe Rossi</h4>
+                                <p>Wedding Clients</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            "Working with Primo Prod on our commercial campaign was a game-changer. Their creative 
+                            vision and technical expertise helped us reach our target audience effectively. 
+                            The final product was beyond our expectations."
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="assets/client-2.jpg" alt="Marco Bianchi">
+                            <div class="author-info">
+                                <h4>Marco Bianchi</h4>
+                                <p>CEO, Sicilian Delights</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            "The team at Primo Prod brought our corporate event to life through stunning videography. 
+                            They were professional, punctual, and delivered exceptional quality. Highly recommended 
+                            for any business looking to elevate their visual content."
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="assets/client-3.jpg" alt="Sofia Verde">
+                            <div class="author-info">
+                                <h4>Sofia Verde</h4>
+                                <p>Marketing Director, Tech Messina</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            "Primo Prod helped us create engaging social media content that significantly boosted 
+                            our online presence. Their understanding of current trends and storytelling ability 
+                            made all the difference in our digital marketing strategy."
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="assets/client-4.jpg" alt="Alessandro Nero">
+                            <div class="author-info">
+                                <h4>Alessandro Nero</h4>
+                                <p>Owner, Messina Fashion Boutique</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonials-navigation">
+                <button class="testimonial-prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="testimonial-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                    <span class="dot" data-slide="3"></span>
+                </div>
+                <button class="testimonial-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title animate__animated animate__fadeInUp">Get In Touch</h2>
+                <p class="section-subtitle animate__animated animate__fadeInUp animate__delay-1s">
+                    Ready to Start Your Next Project?
+                </p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info animate__animated animate__fadeInLeft">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Via del Porto 123<br>Messina, Sicily 98100</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>+39 090 123 4567</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>info@primoprod.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://instagram.com/primoprod" target="_blank" rel="noopener">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://tiktok.com/@primoprod" target="_blank" rel="noopener">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://youtube.com/primoprod" target="_blank" rel="noopener">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form animate__animated animate__fadeInRight">
+                    <form id="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">Your Name</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Your Email</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" required>
+                            <label for="subject">Subject</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <label for="message">Your Message</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-loading">
+                                <i class="fas fa-spinner fa-spin"></i>
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Google Map -->
+            <div class="map-container animate__animated animate__fadeInUp">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50234.84736548739!2d15.511264!3d38.193249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1313fd0c9e222b93%3A0x20b04d3b31c54c9!2sMessina%2C%20Metropolitan%20City%20of%20Messina%2C%20Italy!5e0!3m2!1sen!2sus!4v1642345678901!5m2!1sen!2sus" 
+                    width="100%" 
+                    height="300" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main">
+                <!-- Company Info -->
+                <div class="footer-section footer-about">
+                    <div class="footer-logo">
+                        <img src="assets/primo-prod-logo-white.png" alt="Primo Prod Logo">
+                    </div>
+                    <p class="footer-description">
+                        Primo Prod is Sicily's premier video production company, specializing in creating compelling 
+                        visual stories that captivate audiences and elevate brands. Based in the historic city of Messina.
+                    </p>
+                    <div class="footer-social">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="https://instagram.com/primoprod" target="_blank" rel="noopener" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://tiktok.com/@primoprod" target="_blank" rel="noopener" aria-label="TikTok">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                            <a href="https://youtube.com/primoprod" target="_blank" rel="noopener" aria-label="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="https://facebook.com/primoprod" target="_blank" rel="noopener" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://linkedin.com/company/primoprod" target="_blank" rel="noopener" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div class="footer-section footer-services">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#portfolio">Commercial Videos</a></li>
+                        <li><a href="#portfolio">Wedding Cinematography</a></li>
+                        <li><a href="#portfolio">Corporate Events</a></li>
+                        <li><a href="#portfolio">Social Media Content</a></li>
+                        <li><a href="#portfolio">Brand Documentaries</a></li>
+                        <li><a href="#portfolio">Music Videos</a></li>
+                        <li><a href="#portfolio">Real Estate Tours</a></li>
+                        <li><a href="#contact">Custom Productions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section footer-links">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#testimonials">Client Reviews</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#contact">Get Quote</a></li>
+                        <li><a href="#" data-modal="privacy">Privacy Policy</a></li>
+                        <li><a href="#" data-modal="terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+              
+            </div>
+
+            <!-- Newsletter Signup -->
+            <div class="footer-newsletter">
+                <div class="newsletter-content">
+                    <div class="newsletter-text">
+                        <h3>Stay Updated</h3>
+                        <p>Subscribe to our newsletter for the latest projects, behind-the-scenes content, and special offers.</p>
+                    </div>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <div class="newsletter-input-group">
+                            <input type="email" placeholder="Enter your email address" required>
+                            <button type="submit">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Subscribe</span>
+                            </button>
+                        </div>
+                        <p class="newsletter-privacy">We respect your privacy. Unsubscribe at any time.</p>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="footer-copyright">
+                        <p>&copy; 2024 Primo Prod. All rights reserved.</p>
+                        <p class="footer-tagline">Bringing Stories to Life in Messina, Sicily</p>
+                    </div>
+                    <div class="footer-credits">
+                        <div class="footer-certifications">
+                            <span class="cert-badge">Sicily Business Certified</span>
+                            <span class="cert-badge">Professional Videographers</span>
+                        </div>
+                        <div class="footer-legal">
+                            <a href="#" data-modal="privacy">Privacy</a>
+                            <span class="separator">•</span>
+                            <a href="#" data-modal="terms">Terms</a>
+                            <span class="separator">•</span>
+                            <a href="#" data-modal="cookies">Cookies</a>
+                            <span class="separator">•</span>
+                            <a href="sitemap.xml">Sitemap</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Lightbox Modal -->
+    <div class="video-modal" id="video-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <video class="modal-video" controls>
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>

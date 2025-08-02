@@ -1,0 +1,50 @@
+PRIMO PROD WEBSITE - REQUIRED ASSETS
+====================================
+
+Please add the following files to this assets folder:
+
+LOGOS:
+- primo-prod-logo.png (120px width, transparent background)
+- primo-prod-logo-white.png (white version for dark backgrounds)
+
+HERO SECTION:
+- hero-video.mp4 (1920x1080, web-optimized, 10-30 seconds loop)
+
+ABOUT SECTION:
+- about-team.jpg (800x600, team photo or behind-the-scenes)
+- about-video.mp4 (company introduction video)
+
+PORTFOLIO IMAGES (thumbnails for grid):
+- portfolio-1.jpg (600x400, commercial project)
+- portfolio-2.jpg (600x400, commercial project)
+- portfolio-3.jpg (600x400, event project)
+- portfolio-4.jpg (600x400, event project)
+- portfolio-5.jpg (600x400, social media project)
+- portfolio-6.jpg (600x400, social media project)
+
+PORTFOLIO VIDEOS (for lightbox):
+- commercial-1.mp4 (full commercial video)
+- commercial-2.mp4 (product launch video)
+- wedding-1.mp4 (wedding highlight reel)
+- corporate-event.mp4 (corporate event coverage)
+- social-1.mp4 (Instagram campaign)
+- social-2.mp4 (TikTok series)
+
+CLIENT TESTIMONIAL PHOTOS:
+- client-1.jpg (150x150, round crop recommended)
+- client-2.jpg (150x150, round crop recommended)
+- client-3.jpg (150x150, round crop recommended)
+- client-4.jpg (150x150, round crop recommended)
+
+OPTIMIZATION TIPS:
+- Images: JPG format, optimized for web (under 200KB each)
+- Videos: MP4 format, H.264 codec, compressed for web
+- Use tools like TinyPNG for image compression
+- Use HandBrake or similar for video compression
+
+ALTERNATIVE PLACEHOLDER OPTIONS:
+If you don't have these assets ready, you can use placeholder services:
+- Images: https://picsum.photos/ or https://unsplash.com/
+- Videos: https://pixabay.com/videos/ or create simple placeholder videos
+
+Remember to update the file names in index.html if you use different names!
