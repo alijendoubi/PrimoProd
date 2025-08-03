@@ -320,24 +320,19 @@ function initContactForm() {
             // Get form data
             const formData = new FormData(this);
             
-            // Submit to Formspree (you'll need to replace with your actual form ID)
-            fetch(this.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(response => {
-                if (response.ok) {
-                    // Success
-                    showNotification('Message sent successfully!', 'success');
-                    this.reset();
-                } else {
-                    // Error
-                    showNotification('There was an error sending your message. Please try again.', 'error');
-                }
-            }).catch(error => {
-                // Network error
+            // Submit to Firestore (db is initialized in firebase-config.js)
+            db.collection("contact_submissions").add({
+                name: formData.get('name'),
+                email: formData.get('email'),
+                subject: formData.get('subject'),
+                message: formData.get('message'),
+                timestamp: firebase.firestore.FieldValue.serverTimestamp()
+            }).then(() => {
+                // Success
+                showNotification('Message sent successfully!', 'success');
+                this.reset();
+            }).catch((error) => {
+                // Error
                 showNotification('There was an error sending your message. Please try again.', 'error');
             }).finally(() => {
                 // Reset button state

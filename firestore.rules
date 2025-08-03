@@ -1,0 +1,10 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow read/write access to contact form submissions
+    match /contact_submissions/{document} {
+      allow write: if true; // Allow anyone to submit contact forms
+      allow read: if false; // Don't allow public reading of submissions
+    }
+  }
+}
