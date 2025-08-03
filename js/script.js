@@ -321,6 +321,18 @@ function initContactForm() {
             const formData = new FormData(this);
             
             // Submit to Firestore (db is initialized in firebase-config.js)
+            console.log('Attempting to submit to Firestore...');
+            
+            // Check if Firebase is initialized
+            if (typeof firebase === 'undefined' || typeof db === 'undefined') {
+                console.error('Firebase not initialized properly');
+                showNotification('Firebase not initialized. Please refresh the page.', 'error');
+                btnText.style.display = 'inline-block';
+                btnLoading.style.display = 'none';
+                submitBtn.disabled = false;
+                return;
+            }
+            
             db.collection("contact_submissions").add({
                 name: formData.get('name'),
                 email: formData.get('email'),
@@ -329,11 +341,13 @@ function initContactForm() {
                 timestamp: firebase.firestore.FieldValue.serverTimestamp()
             }).then(() => {
                 // Success
+                console.log('Form submitted successfully');
                 showNotification('Message sent successfully!', 'success');
                 this.reset();
             }).catch((error) => {
                 // Error
-                showNotification('There was an error sending your message. Please try again.', 'error');
+                console.error('Error submitting form:', error);
+                showNotification(`Error: ${error.message}`, 'error');
             }).finally(() => {
                 // Reset button state
                 btnText.style.display = 'inline-block';

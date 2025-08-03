@@ -6,5 +6,10 @@ service cloud.firestore {
       allow write: if true; // Allow anyone to submit contact forms
       allow read: if false; // Don't allow public reading of submissions
     }
+    
+    // Allow test collection for debugging
+    match /test/{document} {
+      allow read, write: if true;
+    }
   }
 }
