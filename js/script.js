@@ -320,40 +320,36 @@ function initContactForm() {
             // Get form data
             const formData = new FormData(this);
             
-            // Submit to Firestore (db is initialized in firebase-config.js)
+            // Try Firebase first, fallback to email if Firebase fails
             console.log('Attempting to submit to Firestore...');
             
             // Check if Firebase is initialized
-            if (typeof firebase === 'undefined' || typeof db === 'undefined') {
-                console.error('Firebase not initialized properly');
-                showNotification('Firebase not initialized. Please refresh the page.', 'error');
-                btnText.style.display = 'inline-block';
-                btnLoading.style.display = 'none';
-                submitBtn.disabled = false;
-                return;
+            if (typeof firebase !== 'undefined' && typeof db !== 'undefined') {
+                // Try Firebase first
+                db.collection("contact_submissions").add({
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    subject: formData.get('subject'),
+                    message: formData.get('message'),
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                }).then(() => {
+                    // Success
+                    console.log('Form submitted successfully to Firebase');
+                    showNotification('Message sent successfully!', 'success');
+                    this.reset();
+                    btnText.style.display = 'inline-block';
+                    btnLoading.style.display = 'none';
+                    submitBtn.disabled = false;
+                }).catch((error) => {
+                    // Firebase failed, try email fallback
+                    console.error('Firebase failed, trying email fallback:', error);
+                    sendEmailFallback(formData, btnText, btnLoading, submitBtn, this);
+                });
+            } else {
+                // Firebase not available, use email fallback
+                console.log('Firebase not available, using email fallback');
+                sendEmailFallback(formData, btnText, btnLoading, submitBtn, this);
             }
-            
-            db.collection("contact_submissions").add({
-                name: formData.get('name'),
-                email: formData.get('email'),
-                subject: formData.get('subject'),
-                message: formData.get('message'),
-                timestamp: firebase.firestore.FieldValue.serverTimestamp()
-            }).then(() => {
-                // Success
-                console.log('Form submitted successfully');
-                showNotification('Message sent successfully!', 'success');
-                this.reset();
-            }).catch((error) => {
-                // Error
-                console.error('Error submitting form:', error);
-                showNotification(`Error: ${error.message}`, 'error');
-            }).finally(() => {
-                // Reset button state
-                btnText.style.display = 'inline-block';
-                btnLoading.style.display = 'none';
-                submitBtn.disabled = false;
-            });
         });
     }
 
@@ -446,6 +442,37 @@ function resetNewsletterButton(button, originalContent) {
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
+}
+
+// Email fallback function
+function sendEmailFallback(formData, btnText, btnLoading, submitBtn, form) {
+    // Create email content
+    const emailContent = `
+        Name: ${formData.get('name')}
+        Email: ${formData.get('email')}
+        Subject: ${formData.get('subject')}
+        Message: ${formData.get('message')}
+    `;
+    
+    // Try EmailJS or simple mailto fallback
+    const subject = `Contact Form: ${formData.get('subject')}`;
+    const body = `Name: ${formData.get('name')}%0D%0AEmail: ${formData.get('email')}%0D%0ASubject: ${formData.get('subject')}%0D%0AMessage: ${formData.get('message')}`;
+    const mailtoLink = `mailto:info@primoprod.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    
+    // Simulate processing time
+    setTimeout(() => {
+        // Open email client
+        window.location.href = mailtoLink;
+        
+        // Show success message
+        showNotification('Opening your email client. Please send the email to complete your message.', 'success');
+        form.reset();
+        
+        // Reset button state
+        btnText.style.display = 'inline-block';
+        btnLoading.style.display = 'none';
+        submitBtn.disabled = false;
+    }, 1000);
 }
 
 // Animation on scroll
