@@ -7,6 +7,12 @@ service cloud.firestore {
       allow read: if false; // Don't allow public reading of submissions
     }
     
+    // Allow read/write access to quote requests
+    match /quote_requests/{document} {
+      allow write: if true; // Allow anyone to submit quote requests
+      allow read: if false; // Don't allow public reading of quote requests
+    }
+    
     // Allow test collection for debugging
     match /test/{document} {
       allow read, write: if true;

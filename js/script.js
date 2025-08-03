@@ -18,12 +18,11 @@ function initLoader() {
     const loadingScreen = document.getElementById('loading-screen');
     
     window.addEventListener('load', function() {
+        // Remove delay so video plays immediately
+        loadingScreen.style.opacity = '0';
         setTimeout(() => {
-            loadingScreen.style.opacity = '0';
-            setTimeout(() => {
-                loadingScreen.style.display = 'none';
-            }, 500);
-        }, 1500);
+            loadingScreen.style.display = 'none';
+        }, 50);
     });
 }
 
@@ -323,19 +322,34 @@ function initContactForm() {
             // Try Firebase first, fallback to email if Firebase fails
             console.log('Attempting to submit to Firestore...');
             
+            // Get selected services (checkboxes)
+            const selectedServices = [];
+            const serviceCheckboxes = this.querySelectorAll('input[name="services"]:checked');
+            serviceCheckboxes.forEach(checkbox => {
+                selectedServices.push(checkbox.value);
+            });
+
             // Check if Firebase is initialized
             if (typeof firebase !== 'undefined' && typeof db !== 'undefined') {
                 // Try Firebase first
-                db.collection("contact_submissions").add({
+                db.collection("quote_requests").add({
                     name: formData.get('name'),
                     email: formData.get('email'),
-                    subject: formData.get('subject'),
-                    message: formData.get('message'),
+                    phone: formData.get('phone'),
+                    company: formData.get('company'),
+                    projectType: formData.get('projectType'),
+                    budget: formData.get('budget'),
+                    eventDate: formData.get('eventDate'),
+                    deadline: formData.get('deadline'),
+                    location: formData.get('location'),
+                    projectDetails: formData.get('projectDetails'),
+                    additionalInfo: formData.get('additionalInfo'),
+                    services: selectedServices,
                     timestamp: firebase.firestore.FieldValue.serverTimestamp()
                 }).then(() => {
                     // Success
-                    console.log('Form submitted successfully to Firebase');
-                    showNotification('Message sent successfully!', 'success');
+                    console.log('Quote request submitted successfully to Firebase');
+                    showNotification('Quote request sent successfully! We\'ll get back to you within 24 hours.', 'success');
                     this.reset();
                     btnText.style.display = 'inline-block';
                     btnLoading.style.display = 'none';
@@ -343,12 +357,12 @@ function initContactForm() {
                 }).catch((error) => {
                     // Firebase failed, try email fallback
                     console.error('Firebase failed, trying email fallback:', error);
-                    sendEmailFallback(formData, btnText, btnLoading, submitBtn, this);
+                    sendEmailFallback(formData, btnText, btnLoading, submitBtn, this, selectedServices);
                 });
             } else {
                 // Firebase not available, use email fallback
                 console.log('Firebase not available, using email fallback');
-                sendEmailFallback(formData, btnText, btnLoading, submitBtn, this);
+                sendEmailFallback(formData, btnText, btnLoading, submitBtn, this, selectedServices);
             }
         });
     }
